@@ -1,0 +1,41 @@
+Formatting requirements
+
+As the Cloud Setup is ready with the APIs, you need to make sure the conversation data is in the required format. Conversation data must be uploaded as a Google Cloud Storage Bucket and received as a JSON or csv file. If provided using Google Drive, unzip, and upload to Google Cloud Storage Bucket storage under customer’s cloud project.
+
+Each entry should be formatted as follows:
+
+It must have Transcript ID, Role, Content, user ID and Timestamp. 
+
+The Transcript ID is a unique identifier for every conversation. This is used to store the conversation in the file named as Transcript ID dash dot dash JSON.
+
+Role is the actor in the conversation.  It may be an AGENT or CUSTOMER.
+
+Messages in the conversation are stored as values to text key.  
+
+user_id is a unique number that identifies the conversation participant.
+
+The timestamp of every message is stored in the key start_timestamp_usec.
+
+{
+  "conversation_info": {
+    "categories": [
+      {
+        "display_name": "Category 1"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "start_timestamp_usec": 1000000,
+      "text": "Hello, I'm calling in regards to ...",
+      "role": "CUSTOMER",
+      "user_id": 1
+    },
+    {
+      "start_timestamp_usec": 5000000,
+      "text": "Yes, I can answer your question ...",
+      "role": "AGENT",
+      "user_id": 2
+    }
+  ]
+}
