@@ -1,0 +1,27 @@
+curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+-H "Content-Type: application/json" \
+https://discoveryengine.googleapis.com/v1beta/projects/652546730991/locations/global/collections/default_collection/dataStores/testds_1716395306032/servingConfigs/testrec_1716394837540:recommend \
+-d '{ "userEvent": { "eventType":"view-item", "userPseudoId":"<USER_PSEUDO_ID>", "documents":[{"id":"00d3f9569bb04d15f44ad6636535b787"}]}}'hanselm@cloudshell:~ (apigee-edge-hm)$ curl -X POST -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+> -H "Content-Type: application/json" \
+> https://discoveryengine.googleapis.com/v1beta/projects/652546730991/locations/global/collections/default_collection/dataStores/testds_1716395306032/servingConfigs/testrec_1716394837540:recommend \
+> -d '{ "userEvent": { "eventType":"view-item", "userPseudoId":"<USER_PSEUDO_ID>", "documents":[{"id":"00d3f9569bb04d15f44ad6636535b787"}]}}'
+{
+  "results": [
+    {
+      "id": "e528afa38b3a739bc98bfff0e840fe98"
+    },
+    {
+      "id": "34b4fd7aac0259cbb37a92a523f5a38d"
+    },
+    {
+      "id": "a583b7c6aa8d02401393c8cac277d2d0"
+    },
+    {
+      "id": "4635f88090410ce63427d19ee7b39710"
+    },
+    {
+      "id": "513da7d1b9f7739087606aadc626f2dc"
+    }
+  ],
+  "attributionToken": "ChQxNjkwOTc4ODkzNjQ0ODI1MTE1OBoVdGVzdHJlY18xNzE2Mzk0ODM3NTQwIhV0ZXN0cmVjXzE3MTYzOTQ4Mzc1NDAoADAC"
+}
